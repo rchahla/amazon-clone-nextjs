@@ -1,7 +1,25 @@
 import React from "react";
+import Product from "./Product";
 
-function ProductFeed() {
-  return <div></div>;
+function ProductFeed({ products }) {
+  return (
+    <div>
+      {products.map(
+        ({ id, title, price, description, category, image, rating }) => (
+          <Product
+            key={id}
+            id={id}
+            title={title}
+            price={price}
+            description={description}
+            category={category}
+            image={image}
+            rate={rating.rate}
+          />
+        )
+      )}
+    </div>
+  );
 }
 
 export default ProductFeed;
